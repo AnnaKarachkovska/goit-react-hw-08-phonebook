@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.name {
+    margin-right: 20px;
+}
+
+.btn {
+    width: 80px;
+    height: 25px;
+    color: white;
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #719bf0;
+}
+
+.btn:hover {
+    background-color: #333399;
+}

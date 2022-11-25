@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { nanoid } from "nanoid";
 
 import ContactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
@@ -47,7 +46,7 @@ const Contacts = () => {
     if (contacts.length > 0) {
       dispatch(fetchContacts());
     }
-    
+    // eslint-disable-next-line
   }, [dispatch]);
   
   return (

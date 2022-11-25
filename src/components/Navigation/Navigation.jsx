@@ -5,7 +5,7 @@ import UserMenu from 'components/UserMenu/UserMenu';
 
 const getStyle = ({ isActive }) =>
   isActive ? { color: '#719bf0' } : { color: 'black' };
-//#0247FE
+
 const Navigation = () => {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 

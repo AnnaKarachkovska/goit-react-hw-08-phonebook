@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+import Notiflix from 'notiflix';
 
 import { register, logIn, logOut, fetchCurrentUser } from './operations';
 
@@ -20,10 +21,16 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
+    [register.rejected](state) {
+      Notiflix.Notify.failure(`Sorry, something is wrong. Please, try again.`);
+    },
     [logIn.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+    },
+    [logIn.rejected](state) {
+      Notiflix.Notify.failure(`Sorry, something is wrong. Please, try again.`);
     },
     [logOut.fulfilled](state) {
       state.user = { name: null, email: null };
